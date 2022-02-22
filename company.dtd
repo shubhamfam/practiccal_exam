@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT companyDB (departments, employees, projects) >
+
+<!ELEMENT departments ( department* ) >
+<!ELEMENT employees ( employee* ) >
+<!ELEMENT projects ( project*, worksOn*) >
+
+<!ELEMENT  department ( dname, locations, manager, employees, projectsControlled ) >
+<!ATTLIST department dno CDATA #REQUIRED>
+<!ELEMENT dname (#PCDATA) >
+<!ELEMENT locations (location*) >
+<!ELEMENT location (#PCDATA) >
+<!ELEMENT manager ( startDate ) >
+<!ATTLIST manager mssn CDATA #IMPLIED >
+<!ELEMENT startDate (#PCDATA) >
+<!ATTLIST employees essns CDATA #IMPLIED>
+<!ELEMENT projectsControlled EMPTY >
+<!ATTLIST projectsControlled pnos CDATA #REQUIRED>
+
+<!ELEMENT employee ( fname, minit, lname, dob, address, sex, salary, dependents*, supervisees?, projects* )>
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT minit (#PCDATA) >
+<!ELEMENT lname (#PCDATA) >
+<!ELEMENT dob (#PCDATA) >
+<!ELEMENT address (#PCDATA) >
+<!ELEMENT sex (#PCDATA) >
+<!ELEMENT salary (#PCDATA) >
+<!ELEMENT dependents ( dependent* ) >
+<!ELEMENT dependent ( dependentName, sex, dob, relationship ) >
+<!ELEMENT dependentName (#PCDATA) >
+<!ELEMENT relationship (#PCDATA) >
+<!ATTLIST employee ssn CDATA #IMPLIED
+                   worksFor CDATA #IMPLIED
+                   supervisor CDATA #IMPLIED
+                   manages CDATA #IMPLIED
+>
+
+<!ELEMENT supervisees EMPTY >
+<!ATTLIST supervisees essns CDATA #IMPLIED>
+<!ELEMENT worksOn EMPTY>
+<!ATTLIST worksOn  pno CDATA #IMPLIED hours CDATA #IMPLIED>
+
+<!ELEMENT project ( pname, plocation, workers) >
+<!ATTLIST project pnumber CDATA #IMPLIED controllingDepartment CDATA #IMPLIED >
+<!ELEMENT pname (#PCDATA) >
+<!ELEMENT plocation (#PCDATA) >
+<!ELEMENT workers ( worker* ) >
+<!ELEMENT worker (#PCDATA) >
+<!ATTLIST worker essn CDATA #IMPLIED>

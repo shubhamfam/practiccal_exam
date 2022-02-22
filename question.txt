@@ -1,0 +1,13 @@
+] Consider the Company Details XML document - company.xml [ 20 Marks]
+
+(provided on your machine.)
+
+a. Write XML Schema specification for the XML document.
+
+b. Write expressions in XQuery to answer the following queries:
+
+i. For every project located in “Stafford”, retrieve the project number, the controlling department number, and the department’s manager’s last name, address, and birth date.
+
+ii. Retrieve the names of all employees who have two or more dependents.
+
+iii. Retrieve the names of managers who have at least one dependent.
